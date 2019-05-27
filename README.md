@@ -1,18 +1,20 @@
-# Teiid Docker image
+# Teiid Docker image With Console
 
 This is an example Dockerfile with [Teiid Runtime engine on Wildfly](http://teiid.io/).
 
+It also includes Teiid Web Console.
+
 ## Usage
 
-    docker run -it jboss/teiid
+    docker run -it gadeynebram/teiid-console-docker
 
 ## To boot in domain mode:
 
-    docker run -it jboss/teiid /opt/jboss/wildfly/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0
+    docker run -it gadeynebram/teiid-console-docker /opt/jboss/wildfly/bin/domain.sh -b 0.0.0.0 -bmanagement 0.0.0.0
 
 ## Extending the image
 
-    FROM jboss/teiid
+    FROM gadeynebram/teiid-console-docker
     # Do your stuff here
 
 ## Application deployment
