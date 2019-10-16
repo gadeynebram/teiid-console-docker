@@ -3,8 +3,8 @@ FROM jboss/wildfly:15.0.1.Final
 ENV JBOSS_HOME /opt/jboss/wildfly
 
 # Set the TEIID_VERSION env variable
-ENV TEIID_VERSION 12.2.1
-ENV TEIID_CONSOLE_VERSION 3.1.0
+ENV TEIID_VERSION 12.2.2
+ENV TEIID_CONSOLE_VERSION 3.1.3
 
 # Download and unzip Teiid server
 RUN cd $JBOSS_HOME \
@@ -14,7 +14,7 @@ RUN cd $JBOSS_HOME \
     && rm teiid-wildfly-$TEIID_VERSION-dist.zip
 
 RUN cd $JBOSS_HOME \
-    && curl -O https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/org/teiid/hal/dist/$TEIID_CONSOLE_VERSION/dist-$TEIID_CONSOLE_VERSION-overlay.zip \
+    && curl -O https://oss.sonatype.org/service/local/repositories/releases/content/org/teiid/hal/dist/$TEIID_CONSOLE_VERSION/dist-$TEIID_CONSOLE_VERSION-overlay.zip \
     && bsdtar -xf dist-$TEIID_CONSOLE_VERSION-overlay.zip \
     && rm dist-$TEIID_CONSOLE_VERSION-overlay.zip
     
